@@ -12,9 +12,9 @@ class user{
 };
 
 const createUser = async (infoUser) => {
-    const {usu_nome , usu_email , usu_senha , usu_telefone , faculdade} = infoUser;
-    const query = 'INSERT INTO Usuarios (usu_nome , usu_email , usu_senha , usu_telefone , faculdade) VALUES (?, ?, ?, ?, ?)'
-    const newUser = new User(usu_nome , usu_email , usu_senha , usu_telefone , faculdade)
+    const {usu_nome , usu_email , usu_senha , usu_tel , faculdade} = infoUser;
+    const query = 'INSERT INTO Usuarios (usu_nome , usu_email , usu_senha , usu_tel , faculdade) VALUES (?, ?, ?, ?, ?)'
+    const newUser = new User(usu_nome , usu_email , usu_senha , usu_tel , faculdade)
 
     const salt = await bcrypt.genSalt(12)
     const SenhaHash = await bcrypt.hash(senha,salt)
